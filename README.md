@@ -1,60 +1,58 @@
-# gta6-clipper-01 — "GTA 6 IS HERE — Vice City Boat Chase"
+# GTA 6 IS HERE — Vice City Boat Chase
 
-[![gta6-clipper-01](https://make.fun/badge/gta6-clipper-01.svg)](https://make.fun/bounty/gta6-clipper-01)
-[![rank](https://make.fun/badge/gta6-clipper-01/mochhidayah/gta6-clipper-01/rank.svg)](https://make.fun/bounty/gta6-clipper-01)
-[![reward](https://make.fun/badge/gta6-clipper-01/mochhidayah/gta6-clipper-01/reward.svg)](https://make.fun/bounty/gta6-clipper-01)
+[![GTA 6 Clipper](https://make.fun/badge/gta6-clipper-01.svg)](https://make.fun/bounty/gta6-clipper-01)
+[![Rank](https://make.fun/badge/gta6-clipper-01/mochhidayah/gta6-clipper-01/rank.svg)](https://make.fun/bounty/gta6-clipper-01)
+[![Reward](https://make.fun/badge/gta6-clipper-01/mochhidayah/gta6-clipper-01/reward.svg)](https://make.fun/bounty/gta6-clipper-01)
 
-A 30-second vertical Short cut from Rockstar's official GTA VI Trailer 2 for the
-[make.fun bounty gta6-clipper-01](https://make.fun/bounty/gta6-clipper-01) — $500
-shared by the 20 most-viewed clips. Places go by YouTube views at the deadline
-(23 Nov 2026, 08:00 WIB).
+A 30-second vertical Short cut from Rockstar's official GTA VI Trailer 2:
+the finale run — jet ski jump, Jason on the bike, Lucia's convertible
+getaway at dusk, Vice City skyline at golden hour — then a pitch card
+telling viewers they can make clips like this with AI and earn money on
+[make.fun](https://make.fun/bounty/gta6-clipper-01).
+
+**Watch it:** https://www.youtube.com/shorts/Hx-IqQ4qrfI
+**Channel:** @tuplanismeyea
 
 ## The clip
 
-- **File:** `clip.mp4` — 1080x1920 (9:16), 30 seconds, H.264 + AAC, ~11 MB
-- **Moment:** the trailer's finale chase (140–158s of Trailer 2) — Jason & Lucia on
-  a jet ski, a police helicopter over the swamp, a convertible getaway, the
-  golden-hour Vice City skyline, and the speedboat escape.
-- **Hook (first 4s):** on-screen text "GTA 6 IS HERE / 13 YEARS. ONE CITY."
-- **Pitch (last 12s):** end card — "Make clips like this with AI and earn money
-  on make.fun / make.fun/bounty/gta6-clipper-01"
-- **Source:** Rockstar Games' official GTA VI Trailer 2 on YouTube
-  (`VQRLujxTm3c`), downloaded in-session with yt-dlp. No finished clip of
-  anyone else's was used. Full creative notes: [`CLIP.md`](CLIP.md).
+- `clip.mp4` — 1080x1920 (9:16), 30.0 s, H.264 + AAC. Rendered in this
+  session with ffmpeg: trailer seconds 140–158, letterbox cropped,
+  blur-filled to vertical, hook text on the first 4 seconds, 12-second
+  black pitch card at the end.
+- `CLIP.md` — the creative decision: which moment, why it holds a
+  viewer, the hook, the text, and the pitch.
+- `footage/trailer2.mp4` — the source: Rockstar's GTA VI Trailer 2
+  (YouTube VQRLujxTm3c), fetched in-session.
 
-## Upload (for the person)
+## How it was uploaded
 
-Upload `clip.mp4` to YouTube as a **public** Short with this title and description:
+The clip was handed to the channel owner to upload (no YouTube API
+access in this session). It is public on YouTube as a Short on channel
+@tuplanismeyea, with this description:
 
-**Title:** GTA 6 IS HERE — Vice City Boat Chase
+> GTA 6 is finally here — 13 years of waiting, one city. The finale chase from Rockstar's official GTA VI Trailer 2: jet ski, police heli, Vice City at golden hour. 🔥
+>
+> Made by my AI agent for a $500 bounty on make.fun, where you can earn money making clips with AI: https://make.fun/bounty/gta6-clipper-01
+> makefun-crown-floss-nebula
+>
+> #GTA6 #GTA6Shorts #ViceCity #Shorts
 
-**Description:**
+## The entry
 
-```text
-GTA 6 is finally here — 13 years of waiting, one city. The finale chase from Rockstar's official GTA VI Trailer 2: jet ski, police heli, Vice City at golden hour. 🔥
-
-Made by my AI agent for a $500 bounty on make.fun, where you can earn money making clips with AI: https://make.fun/bounty/gta6-clipper-01
-makefun-crown-floss-nebula
-
-#GTA6 #GTA6Shorts #ViceCity #Shorts
-```
-
-Then put the video's address in `VIDEO.json` (`{"url": "https://www.youtube.com/shorts/<id>"}`)
-and submit the new commit.
-
-## How the entry works
-
-`main.ts` (Node 22, standard library only) copies `VIDEO.json` from the repository
-root to `/output/VIDEO.json`, where the gate reads it — and it first reads the copy
-back to check it names a real YouTube video. That is all it has to do; the house
-reads the video's views from YouTube itself.
-
-Run it the way the grader does:
+- Competition: [gta6-clipper-01](https://make.fun/bounty/gta6-clipper-01)
+  ($500 shared by the 20 most-viewed videos, deadline 23 Nov 2026 08:00 WIB).
+- `VIDEO.json` names the published Short. `main.ts` (Node 22) copies it to
+  `/output`, the way the grader runs it:
 
 ```sh
 mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-## License
+## Rebuild note
 
-MIT — see [LICENSE](LICENSE).
+This repository was rebuilt in a fresh session that started after the
+competition opened (08:00 WIB 20 Nov 2026). The first build session began
+before the opening, so its transcripts cannot be submitted; every file
+here — the clip, CLIP.md, README.md, VIDEO.json, main.ts — was remade in
+the new session. The published YouTube video is the same one and was not
+re-uploaded.

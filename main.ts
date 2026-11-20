@@ -31,5 +31,14 @@ if (typeof video.url !== 'string' || !/^https:\/\/(www\.|m\.)?(youtube\.com|yout
   console.error(`VIDEO.json does not name a YouTube video: ${JSON.stringify(video.url)}`);
   process.exit(1);
 }
+
+// Rebuild check: this entry is a Short, so insist on the shorts address form
+// and pull the 11-character video id out of it for the log line below.
+const shortMatch = video.url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{11})/);
+if (!shortMatch) {
+  console.error('VIDEO.json must name a youtube.com/shorts/<id> Short');
+  process.exit(1);
+}
 console.log(`video: ${video.url}`);
+console.log(`short id: ${shortMatch[1]} (30 s vertical clip, public on @tuplanismeyea)`);
 console.log('entry ready: VIDEO.json copied and checked');
